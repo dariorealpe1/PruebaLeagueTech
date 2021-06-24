@@ -1,0 +1,4 @@
+El proyecto tiene datos de pruebas de la base de datos, tiene 3 productos, 3 tiendas y 2 categorias, los productos y tiendas estan enlazadas respectivamente
+Para ejecutar el programa, descargar clonar el repositorio, activar el servidor de ruby e ir al link ¨direcicon que salga del servidor¨/index, se abrira la pestana de index 
+donde esta escrito mi nombre, y 3 pestanas mas que son ´products´, ´store´ y ´category´ al hacer click en cada pestana se desplega una tabla con los datos respectivos, se puede 
+crear un nuevo producto, nueva tienda y nueva categoria con el boton que dice ´new´ en cada pestana y cada elemento de la tabla puede ser editado o eliminado
