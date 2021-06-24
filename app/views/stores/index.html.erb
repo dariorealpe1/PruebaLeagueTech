@@ -1,0 +1,44 @@
+<h1>Listado de tiendas</h1>
+<a class="btn btn-secondary" href="/stores/new">New Store</a>
+<table class="table table-striped">
+	<tr>
+		<thead>
+			<th>Nombre</th>
+			<th>Calle</th>
+			<th>Numero</th>
+			<th>Zip Code</th>
+			<th>Ciudad</th>
+			<th>Pais</th>
+			<th>Products</th>
+			<th>Funciones</th>
+		</thead>
+	</tr>
+	<% @stores.each do |tiendas| %>
+	<tr>
+
+		<td><%=tiendas.name %></td>
+		<td><%=tiendas.street %></td>
+		<td><%=tiendas.number %></td>
+		<td><%=tiendas.zipCode %></td>
+		<td><%=tiendas.city %></td>
+		<td><%=tiendas.country %></td>
+		<td>
+		   	<% tiendas.productsId.each do |id| %>
+		   		<% if Product.find_by_id(id) %>
+			   		<%=Product.find(id).name%>
+			  	<%else %>
+			  		Product<%=id%> not found			   
+			   	<%end%>
+			    <br>
+			<% end %> 
+		   </td>
+
+		<td>
+
+			<%= link_to "Editar", edit_stores1_path(tiendas),class: 'btn btn-sm btn-secondary'%>
+			<%= link_to "Eliminar",tiendas,method: :delete, data:{confirm:"Deseas eliminar este articulo?"},class: 'btn btn-sm btn-secondary'  %>
+		</td>
+		<td></td>
+	</tr>
+	<%end%>
+</table>

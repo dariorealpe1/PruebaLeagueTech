@@ -1,0 +1,24 @@
+<%= form_for @category do |f| %>
+<div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New Category</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      	<div>
+		<%= f.label :name %> &nbsp
+		<%= f.text_field :name %>
+		
+		</div>
+
+		<div>
+		<%= f.label :keywords %> &nbsp
+		<%= f.text_field :keywords %>
+		
+		</div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </div>
+<%end %>

@@ -1,0 +1,43 @@
+<h1>Listado de Categorias</h1>
+<%= link_to "New Category",category_new_path, remote: true,class: 'btn btn-sm btn-secondary' %>
+<table class="table table-striped">
+	<tr>
+		<thead>
+			<th>Nombre</th>
+			<th>Keywords</th>
+			<th>Funciones</th>
+		</thead>
+	</tr>
+	<% @category.each do |categorias| %>
+	<tr>
+
+		<td><%=categorias.name %></td>
+		<td><%=categorias.keywords %></td>
+		<td>
+			<%= link_to "Editar", edit_categories1_path(categorias),remote: true,class: 'btn btn-sm btn-secondary'%>
+			<%= link_to "Eliminar",categorias,method: :delete, data:{confirm:"Deseas eliminar este articulo?"},class: 'btn btn-sm btn-secondary' %>
+		</td>
+		<td></td>
+	</tr>
+	<%end%>
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="newModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal Edit -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,33 @@
+<%= form_for @products do |f| %>
+<tr>
+<tr>
+	<div>
+		<%= f.label :name %> &nbsp
+		<%= f.text_field :name %>
+	</div>
+
+	<div>
+		<%= f.label :color %>&nbsp
+		<%= f.text_field :color%>
+	</div>
+
+	<div>
+		<%= f.label :size%>&nbsp
+		<%= f.text_field :size%>
+	</div>
+	<div>
+		<%= f.label :categoryId%>&nbsp
+		<%= f.text_field :categoryId%>
+	</div>
+	<div>
+		<%= f.label :price%>&nbsp
+		<%= f.text_field :price%>
+	</div>
+	<div>
+		<%= f.label :storesId%>&nbsp
+		<%= f.text_field :storesId%>
+	</div>
+	<div>
+		<%= f.submit %>
+	</div>
+<%end %>

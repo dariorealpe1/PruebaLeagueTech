@@ -1,0 +1,38 @@
+<%= form_for @stores do |f| %>
+<tr>
+<tr>
+	<div>
+		<%= f.label :name %> &nbsp
+		<%= f.text_field :name %>
+		
+	</div>
+
+	<div>
+		<%= f.label :street %>&nbsp
+		<%= f.text_field :street%>
+	</div>
+
+	<div>
+		<%= f.label :number%>&nbsp
+		<%= f.text_field :number%>
+	</div>
+	<div>
+		<%= f.label :zipCode%>&nbsp
+		<%= f.text_field :zipCode%>
+	</div>
+	<div>
+		<%= f.label :city%>&nbsp
+		<%= f.text_field :city%>
+	</div>
+	<div>
+		<%= f.label :country%>&nbsp
+		<%= f.text_field :country%>
+	</div>
+	<div>
+		<%= f.label :productsId%>&nbsp
+		<%= f.text_field :productsId%>
+	</div>
+	<div>
+		<%= f.submit %>
+	</div>
+<%end %>

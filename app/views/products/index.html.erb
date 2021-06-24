@@ -1,0 +1,46 @@
+<h1>Listado de productos</h1>
+<a class="btn btn-secondary" href="/products/new">New Product</a>
+<table class="table table-striped">
+	<tr>
+		
+		<thead>
+			<th>Nombre</th>
+			<th>Color</th>
+			<th>Categoria</th>
+			<th>Size</th>
+			<th>Price</th>
+			<th>Stores</th>
+			<th>Funciones</th>
+		</thead>
+	</tr>
+	<% @products.each do |productos| %>
+	<tr>
+
+		<td><%=productos.name %></td>
+		<td><%=productos.color %></td>
+			<% if Category.find_by_id(productos.categoryId) %>
+		   		<td><%=Category.find(productos.categoryId).name%></td>
+		   <%else %>
+		   		<td>no existe esa categoria</td>
+		   <%end%>
+		<td><%=productos.size %></td>
+		<td><%=productos.price %></td>
+		   <td>
+		   	<% productos.storesId.each do |id| %>
+
+			   	<% if Store.find_by_id(id) %>
+			   		<%=Store.find(id).name%>
+			  	<%else %>
+			  		Store<%=id%> not found			   
+			   	<%end%>
+			   <br>
+			<% end %> 
+		   </td>
+		<td>
+			<%= link_to "Editar", edit_product1_path(productos), class: 'btn btn-sm btn-secondary'%>
+			<%= link_to "Eliminar",productos,method: :delete, data:{confirm:"Deseas eliminar este articulo?"},class: 'btn btn-sm btn-secondary' %>
+		</td>
+	</tr>
+	<%end%>
+</table>
+
